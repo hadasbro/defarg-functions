@@ -1,6 +1,6 @@
 **Functions and consumers with default parameters factory**
 
-Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages then Java.
+Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
 *Uses Type Tools to resolve variadic params https://github.com/jhalterman/typetools*
 
@@ -171,9 +171,21 @@ You can use FuntionFactory to register function or consumer as below.
 
 
 
+
 ---
 
-## Future, todo
+
+## Type hinting
+
+Type hinting should suggest parameter types normally in all popular IDEs. Also if you specify e.g. consumer with 4 parameters and 2 dafeults, then IDE 
+should suggest function/consumer parameters (all possible signatures) corectly as below.
+
+![picture](images/type-hinting.png)
+
+
+---
+
+## Future, Todo
 
 After bugfix in Java 11 core, default parameters will be provided via annotations as below.
 
