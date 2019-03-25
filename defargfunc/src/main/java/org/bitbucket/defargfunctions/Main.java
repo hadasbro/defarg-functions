@@ -53,7 +53,6 @@ public class Main {
 
         );
 
-        myConsumer.
 
         // consumer call results:
 
