@@ -6,48 +6,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-        class Test{
-
-            Consumer2DefaultParams2<Integer, String> consumer = registerConsumer(
-
-                    // consumer
-                    (var a, var str) -> {
-
-                        // consumer body
-                        System.out.println(a + " - " + str);
-
-                    },
-
-                    // default value for param 2
-                    14,
-
-                    // default value for param 2
-                    "default string b"
-            );
-
-            public Test(){
-                consumer.apply(); // 14 - default string b
-                consumer.apply(12); // 12 - default string b
-                consumer.apply(15, "abc"); // 15 - abc
-            }
-
-        }
-
-        /*
-            consumer with 1 parameter and 1 default value
-         */
-        Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
-
-                // consumer
-                System.out::println,
-
-                //default param 1
-                150
-        );
-
-        doSomething.apply(); // 150
-        doSomething.apply(250); // 250
-
 
         /*
             consumer with 2 parameters and 1 default value
@@ -68,9 +26,6 @@ public class Main {
                 //default value for param 2
                 "default string"
         );
-
-        doSomethingElse.apply(1); // 1 - default string
-        doSomethingElse.apply(250, "something"); // 250 - something
 
 
 
@@ -97,6 +52,8 @@ public class Main {
             'x'
 
         );
+
+        myConsumer.
 
         // consumer call results:
 
