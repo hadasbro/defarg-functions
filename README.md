@@ -1,6 +1,6 @@
 **Functions and consumers with default parameters factory**
 
-Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages then Java.
+Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
 *Uses Type Tools to resolve variadic params https://github.com/jhalterman/typetools*
 
