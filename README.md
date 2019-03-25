@@ -3,6 +3,7 @@
 Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages then Java.
 
 *Uses Type Tools to resolve variadic params https://github.com/jhalterman/typetools*
+
 *Uses jUnit for autotests*
 
 ---
