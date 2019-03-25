@@ -1,45 +1,182 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+**Functions and consumers with default parameters factory**
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages then Java.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+*Uses Type Tools to resolve variadic params https://github.com/jhalterman/typetools*
 
----
-
-## Edit a file
-
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+*Uses jUnit for autotests*
 
 ---
 
-## Create a file
+## Purpose
 
-Next, you’ll add a new file to this repository.
+If you need function or consumer with some default parameter such as e.g. in PHP, for example:
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+PHP:
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+		function a(int $a = 1, int $b = 2) { 
+			... 
+		}
+
+		a(1);
+		a(1, 2)
+		
+	
+JAVA:
+
+		a = Consumer2DefaultParams2<Integer, Integer> consumer = registerConsumer((var a, var str) -> { ... }, 1, 2)
+		a.apply(1);
+		a.apply(1, 2);
+		
 
 ---
 
-## Clone a repository
+## Usage
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+You can use FuntionFactory to register function or consumer as below.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+1. Consumer with *1 parameter and 1 default* value
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+		Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
+
+                // consumer
+                System.out::println,
+
+                //default param 1
+                150
+        );
+
+        doSomething.apply(); // 150
+        doSomething.apply(250); // 250
+		
+
+
+
+2. Consumer with *2 parameters and 1 default* value
+
+		Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
+
+                // consumer
+                (Integer a, String str) -> {
+
+                    // consumer body
+                    System.out.println(a + " - " + str);
+
+                },
+
+                // mark param 1 as mandatory
+                REQUIRED.NO_DEFAULT,
+
+                //default value for param 2
+                "default string"
+        );
+
+        doSomethingElse.apply(1); // 1 - default string
+        doSomethingElse.apply(250, "something"); // 250 - something
+		
+
+3. consumer with *4 parameter and 2 default* values
+
+		Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
+
+            // consumer
+            (Integer a, Integer b, String c, Character e) -> System.out.println(
+                    a + " -> " + b + "  ->  " + c + "  -> " + e
+            ),
+
+            // param 1 marked as mandatory
+            REQUIRED.NO_DEFAULT,
+
+            // param 2 marked as mandatory
+            REQUIRED.NO_DEFAULT,
+
+            // default value for param 3
+            "default string",
+
+            // default value for param 4
+            'x'
+
+        );
+
+        // consumer call results:
+
+        myConsumer.apply(2, 3, "test", 'a');
+        // result: 2 -> 3  ->  test  -> a
+
+        myConsumer.apply(2, 3, "test2");
+        // result: 2 -> 3  ->  test  -> a
+
+        myConsumer.apply(2, 3);
+        // result: 2 -> 3  ->  default string  -> x
+		
+
+
+
+4. *JAVA 11* consumer example
+
+		Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
+
+                // consumer
+                (var a, var str) -> {
+
+                    // consumer body
+                    System.out.println(a + " - " + str);
+
+                },
+
+                // default value param 1
+                150,
+
+                // default value param 2
+                "default string b"
+        );
+
+        doSomethingNew.apply(); // 150 - default string b
+        doSomethingNew.apply(12); // 12 - default string b
+        doSomethingNew.apply(13, "test string"); // 13 - test string
+		
+		
+		
+		
+		
+5. Consumer as lambda function in class
+
+		class Test{
+
+            Consumer2DefaultParams2<Integer, String> consumer = registerConsumer(
+
+                    // consumer
+                    (var a, var str) -> {
+
+                        // consumer body
+                        System.out.println(a + " - " + str);
+
+                    },
+
+                    // default value for param 2
+                    14,
+
+                    // default value for param 2
+                    "default string b"
+            );
+
+            public Test(){
+                consumer.apply(); // 14 - default string b
+                consumer.apply(12); // 12 - default string b
+                consumer.apply(15, "abc"); // 15 - abc
+            }
+
+        }
+		
+
+
+
+---
+
+## Future, todo
+
+After bugfix in Java 11 core, default parameters will be provided via annotations as below.
+
+
+	(var a, @def(object) var bee, @def("def string") var ster, @def(123) var number) -> { /* body */ }
+
