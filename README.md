@@ -12,7 +12,22 @@ Use this module if you need function or consumer with default parameter such as 
 
 If you need function or consumer with some default parameter such as e.g. in PHP, for example:
 
+Python:
+
+        def a(a = 1, b = 2):
+                ...
+        
+
+C++:
+
+        int a(int a = 1, int b = 2) 
+        { 
+            ...
+        } 
+
+
 PHP:
+
 
 		function a(int $a = 1, int $b = 2) { 
 			... 
@@ -22,7 +37,8 @@ PHP:
 		a(1, 2)
 		
 	
-JAVA:
+JAVA [ DefargFunc ]:
+
 
 		a = Consumer2DefaultParams2<Integer, Integer> consumer = registerConsumer((var a, var str) -> { ... }, 1, 2)
 		a.apply(1);
@@ -52,6 +68,7 @@ You can use FuntionFactory to register function or consumer as below.
 
 
 
+
 2. Consumer with *2 parameters and 1 default* value
 
 		Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
@@ -74,6 +91,8 @@ You can use FuntionFactory to register function or consumer as below.
         doSomethingElse.apply(1); // 1 - default string
         doSomethingElse.apply(250, "something"); // 250 - something
 		
+
+
 
 3. consumer with *4 parameter and 2 default* values
 
@@ -112,6 +131,7 @@ You can use FuntionFactory to register function or consumer as below.
 
 
 
+
 4. *JAVA 11* consumer example
 
 		Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
@@ -138,6 +158,7 @@ You can use FuntionFactory to register function or consumer as below.
 		
 		
 		
+
 		
 5. Consumer as lambda function in class
 
