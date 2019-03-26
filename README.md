@@ -208,7 +208,7 @@ should suggest function/consumer parameters (all possible signatures) corectly a
 
 ## Future, Todo
 
-After bugfix in Java 11 core, default parameters will be provided via annotations as below.
+After bugfix in JDK [ JDK-8027181 ], default parameters will be provided via annotations as below.
 
 
 	(var a, @def(object) var bee, @def("def string") var ster, @def(123) var number) -> { /* body */ }
