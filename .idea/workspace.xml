@@ -17,10 +17,12 @@
     <session id="-1389384240">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -34,7 +36,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2033" />
-          <entry key="Markdown" value="9" />
+          <entry key="Markdown" value="39" />
           <entry key="XML" value="13" />
         </counts>
       </usages-collector>
@@ -117,8 +119,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="356">
-                <caret line="210" column="19" selection-start-line="210" selection-start-column="19" selection-end-line="210" selection-end-column="19" />
+              <first_editor relative-caret-position="177">
+                <caret line="12" column="99" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
               </first_editor>
               <second_editor />
             </state>
@@ -204,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,44 +216,22 @@
             <path>
               <item name="defargfunctions" type="b2602c69:ProjectViewProjectNode" />
               <item name="defargfunc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="defargfunctions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defargfunc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defargfunctions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defargfunc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defargfunctions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defargfunc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defargfunctions" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defargfunc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="defargfunctions" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="readme&#9;FILE&#9;file://C:/Users/S/Documents/defargfunctions/README.md&#10;main&#9;FILE&#9;file://C:/Users/S/Documents/defargfunctions/defargfunc/src/main/java/org/bitbucket/defargfunctions/Main.java&#10;ConsumerDefaultParams2&#9;PSI&#9;JAVA://org.bitbucket.defargfunctions.ConsumerInterfaces.Consumer4DefaultParams2" />
+    <property name="SearchEverywhereHistoryKey" value="/images&#9;FILE&#9;jrt://C:/Program Files/Java/jdk-11.0.1!/jdk.hotspot.agent/images&#10;readme&#9;FILE&#9;file://C:/Users/S/Documents/defargfunctions/README.md&#10;main&#9;FILE&#9;file://C:/Users/S/Documents/defargfunctions/defargfunc/src/main/java/org/bitbucket/defargfunctions/Main.java&#10;ConsumerDefaultParams2&#9;PSI&#9;JAVA://org.bitbucket.defargfunctions.ConsumerInterfaces.Consumer4DefaultParams2" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553556651991" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -372,7 +351,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Job Explorer" order="6" />
       <window_info id="Designer" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="8" visible="true" weight="0.18081991" />
+      <window_info active="true" content_ui="combo" id="Project" order="8" visible="true" weight="0.13030747" />
       <window_info id="Structure" order="9" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -460,8 +439,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="356">
-            <caret line="210" column="19" selection-start-line="210" selection-start-column="19" selection-end-line="210" selection-end-column="19" />
+          <first_editor relative-caret-position="177">
+            <caret line="12" column="99" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
           </first_editor>
           <second_editor />
         </state>

@@ -10,7 +10,7 @@ Use this module if you need function or consumer with default parameter such as 
 
 ## Purpose
 
-If you need function or consumer with some default parameter such as e.g. in PHP, for example:
+If you need function or consumer with some default parameter such as in other programming languages, for example:
 
 Python:
 
