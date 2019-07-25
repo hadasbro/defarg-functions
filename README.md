@@ -1,5 +1,8 @@
 **Functions and consumers with default parameters factory**
 
+![picture](https://img.shields.io/badge/Java-11.0.1-brightgreen.svg)
+![picture](https://img.shields.io/badge/junit-4.12-green.svg)
+
 Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
 *Uses Type Tools to resolve variadic params https://github.com/jhalterman/typetools*
