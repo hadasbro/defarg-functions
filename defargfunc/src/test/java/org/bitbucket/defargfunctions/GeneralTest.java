@@ -8,7 +8,7 @@ import static org.bitbucket.defargfunctions.FunctionRegistration.registerConsume
 import static org.junit.Assert.assertTrue;
 
 @SuppressWarnings({"WeakerAccess", "WeakAccess", "unused"})
-public class FunctionsTest {
+public class GeneralTest {
 
     @Test
     public void generalTest() {
