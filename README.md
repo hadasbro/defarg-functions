@@ -5,9 +5,9 @@
 
 Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
-*Uses Type Tools to resolve variadic params https://github.com/jhalterman/typetools*
+Uses *[Type Tools](https://github.com/jhalterman/typetools)* to resolve variadic params
 
-*Uses jUnit for autotests*
+Uses *jUnit* for autotests
 
 ---
 
