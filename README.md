@@ -59,9 +59,7 @@ You can use FuntionFactory to register function or consumer as below.
 
 1. Simple example (Java 11)
 ```java
-var showSum = registerConsumer(
-        (var a, var b) ->  {System.out.println(a + b);}, 1, 2
-);
+var showSum = registerConsumer((var a, var b) ->  {System.out.println(a + b);}, 1, 2);
 
 showSum.apply(); // 3
 showSum.apply(11); // 13
