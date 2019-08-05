@@ -17,36 +17,38 @@ If you need function or consumer with some default parameter such as in other pr
 
 Python:
 
-        def a(a = 1, b = 2):
-                ...
-        
+```python
+def a(a = 1, b = 2):
+        ...
+```        
 
 C++:
 
-        int a(int a = 1, int b = 2) 
-        { 
-            ...
-        } 
+```cpp
+int a(int a = 1, int b = 2) 
+{ 
+    ...
+}
+```
 
 
 PHP:
 
+```php
+function a(int $a = 1, int $b = 2) { 
+    ... 
+}
 
-		function a(int $a = 1, int $b = 2) { 
-			... 
-		}
-
-		a(1);
-		a(1, 2)
-		
+a(1);
+a(1, 2)
+```		
 	
 JAVA [ DefargFunc ]:
-
-
-		a = Consumer2DefaultParams2<Integer, Integer> consumer = registerConsumer((var a, var str) -> { ... }, 1, 2)
-		a.apply(1);
-		a.apply(1, 2);
-		
+```java
+a = Consumer2DefaultParams2<Integer, Integer> consumer = registerConsumer((var a, var str) -> { ... }, 1, 2)
+a.apply(1);
+a.apply(1, 2);
+```
 
 ---
 
@@ -99,7 +101,7 @@ doSomethingElse.apply(250, "something"); // 250 - something
 
 
 
-3. consumer with *4 parameter and 2 default* values
+3. Consumer with *4 parameter and 2 default* values
 ```java
 Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
 
