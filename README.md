@@ -46,7 +46,7 @@ a(1, 2)
 	
 JAVA [ DefargFunc ]:
 ```java
-var a = registerConsumer((var a, var b) -> { /* ... */ }, 1, 2);
+var a = registerConsumer((var b, var c) -> { /* ... */ }, 1, 2);
 a.apply(1);
 a.apply(1, 2);
 ```
@@ -57,7 +57,17 @@ a.apply(1, 2);
 
 You can use FuntionFactory to register function or consumer as below.
 
-1. Consumer with *1 parameter and 1 default* value
+1. Simple example (Java 11)
+```java
+var showSum = registerConsumer(
+        (var a, var b) ->  {System.out.println(a + b);}, 1, 2
+);
+
+showSum.apply(); // 3
+showSum.apply(11); // 13
+showSum.apply(11,12); // 23
+```
+2. Consumer with *1 parameter and 1 default* value
 
 ```java
 Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
@@ -77,7 +87,7 @@ doSomething.apply(250); // 250
 
 
 
-2. Consumer with *2 parameters and 1 default* value
+3. Consumer with *2 parameters and 1 default* value
 ```java
 Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
 
@@ -102,7 +112,7 @@ doSomethingElse.apply(250, "something"); // 250 - something
 
 
 
-3. Consumer with *4 parameter and 2 default* values
+4. Consumer with *4 parameter and 2 default* values
 ```java
 Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
 
@@ -140,7 +150,7 @@ myConsumer.apply(2, 3);
 
 
 
-4. *JAVA 11* consumer example
+5. *JAVA 11* consumer example
 ```java
 Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
 
@@ -168,7 +178,7 @@ doSomethingNew.apply(13, "test string"); // 13 - test string
 		
 
 		
-5. Consumer as lambda function in class
+6. Consumer as lambda function in class
 ```java
 class Test{
 
