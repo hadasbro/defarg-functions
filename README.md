@@ -46,9 +46,9 @@ a(1, 2)
 	
 JAVA [ DefargFunc ]:
 ```java
-var func = registerConsumer((var a, var b) -> { /* ... */ }, 1, 2);
-func.apply(1);
-func.apply(1, 2);
+var a = registerConsumer((var a, var b) -> { /* ... */ }, 1, 2);
+a.apply(1);
+a.apply(1, 2);
 ```
 
 ---
