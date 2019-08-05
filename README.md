@@ -1,7 +1,7 @@
 **Functions and consumers with default parameters factory**
 
 ![picture](https://img.shields.io/badge/Java-11.0.1-brightgreen.svg)
-![picture](https://img.shields.io/badge/junit-4.12-green.svg)
+![picture](https://img.shields.io/badge/jUnit-4.12-brightgreen)
 
 Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
@@ -56,142 +56,144 @@ You can use FuntionFactory to register function or consumer as below.
 
 1. Consumer with *1 parameter and 1 default* value
 
-		Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
+```java
+Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
 
-                // consumer
-                System.out::println,
+        // consumer
+        System.out::println,
 
-                //default param 1
-                150
-        );
+        //default param 1
+        150
+);
 
-        doSomething.apply(); // 150
-        doSomething.apply(250); // 250
+doSomething.apply(); // 150
+doSomething.apply(250); // 250
+```
 		
 
 
 
 
 2. Consumer with *2 parameters and 1 default* value
+```java
+Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
 
-		Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
+    // consumer
+    (Integer a, String str) -> {
 
-                // consumer
-                (Integer a, String str) -> {
+        // consumer body
+        System.out.println(a + " - " + str);
 
-                    // consumer body
-                    System.out.println(a + " - " + str);
+    },
 
-                },
+    // mark param 1 as mandatory
+    REQUIRED.NO_DEFAULT,
 
-                // mark param 1 as mandatory
-                REQUIRED.NO_DEFAULT,
+    //default value for param 2
+    "default string"
+);
 
-                //default value for param 2
-                "default string"
-        );
-
-        doSomethingElse.apply(1); // 1 - default string
-        doSomethingElse.apply(250, "something"); // 250 - something
-		
+doSomethingElse.apply(1); // 1 - default string
+doSomethingElse.apply(250, "something"); // 250 - something
+```
 
 
 
 3. consumer with *4 parameter and 2 default* values
+```java
+Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
 
-		Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
+    // consumer
+    (Integer a, Integer b, String c, Character e) -> System.out.println(
+            a + " -> " + b + "  ->  " + c + "  -> " + e
+    ),
 
-            // consumer
-            (Integer a, Integer b, String c, Character e) -> System.out.println(
-                    a + " -> " + b + "  ->  " + c + "  -> " + e
-            ),
+    // param 1 marked as mandatory
+    REQUIRED.NO_DEFAULT,
 
-            // param 1 marked as mandatory
-            REQUIRED.NO_DEFAULT,
+    // param 2 marked as mandatory
+    REQUIRED.NO_DEFAULT,
 
-            // param 2 marked as mandatory
-            REQUIRED.NO_DEFAULT,
+    // default value for param 3
+    "default string",
 
-            // default value for param 3
-            "default string",
+    // default value for param 4
+    'x'
 
-            // default value for param 4
-            'x'
+);
 
-        );
+// consumer call results:
 
-        // consumer call results:
+myConsumer.apply(2, 3, "test", 'a');
+// result: 2 -> 3  ->  test  -> a
 
-        myConsumer.apply(2, 3, "test", 'a');
-        // result: 2 -> 3  ->  test  -> a
+myConsumer.apply(2, 3, "test2");
+// result: 2 -> 3  ->  test  -> a
 
-        myConsumer.apply(2, 3, "test2");
-        // result: 2 -> 3  ->  test  -> a
-
-        myConsumer.apply(2, 3);
-        // result: 2 -> 3  ->  default string  -> x
-		
+myConsumer.apply(2, 3);
+// result: 2 -> 3  ->  default string  -> x
+```
 
 
 
 
 4. *JAVA 11* consumer example
+```java
+Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
 
-		Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
+        // consumer
+        (var a, var str) -> {
 
-                // consumer
-                (var a, var str) -> {
+            // consumer body
+            System.out.println(a + " - " + str);
 
-                    // consumer body
-                    System.out.println(a + " - " + str);
+        },
 
-                },
+        // default value param 1
+        150,
 
-                // default value param 1
-                150,
+        // default value param 2
+        "default string b"
+);
 
-                // default value param 2
-                "default string b"
-        );
-
-        doSomethingNew.apply(); // 150 - default string b
-        doSomethingNew.apply(12); // 12 - default string b
-        doSomethingNew.apply(13, "test string"); // 13 - test string
-		
+doSomethingNew.apply(); // 150 - default string b
+doSomethingNew.apply(12); // 12 - default string b
+doSomethingNew.apply(13, "test string"); // 13 - test string
+```
 		
 		
 		
 
 		
 5. Consumer as lambda function in class
+```java
+class Test{
 
-		class Test{
+    Consumer2DefaultParams2<Integer, String> consumer = registerConsumer(
 
-            Consumer2DefaultParams2<Integer, String> consumer = registerConsumer(
+            // consumer
+            (var a, var str) -> {
 
-                    // consumer
-                    (var a, var str) -> {
+                // consumer body
+                System.out.println(a + " - " + str);
 
-                        // consumer body
-                        System.out.println(a + " - " + str);
+            },
 
-                    },
+            // default value for param 2
+            14,
 
-                    // default value for param 2
-                    14,
+            // default value for param 2
+            "default string b"
+    );
 
-                    // default value for param 2
-                    "default string b"
-            );
+    public Test(){
+        consumer.apply(); // 14 - default string b
+        consumer.apply(12); // 12 - default string b
+        consumer.apply(15, "abc"); // 15 - abc
+    }
 
-            public Test(){
-                consumer.apply(); // 14 - default string b
-                consumer.apply(12); // 12 - default string b
-                consumer.apply(15, "abc"); // 15 - abc
-            }
-
-        }
-		
+}
+```
 
 
 
