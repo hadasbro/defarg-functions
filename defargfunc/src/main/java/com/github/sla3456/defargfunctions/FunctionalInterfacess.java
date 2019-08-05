@@ -1,4 +1,4 @@
-package org.bitbucket.defargfunctions;
+package com.github.sla3456.defargfunctions;
 
 @SuppressWarnings({"WeakAccess", "WeakerAccess","unused"})
 public interface FunctionalInterfacess {

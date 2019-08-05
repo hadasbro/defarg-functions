@@ -1,15 +1,12 @@
-package org.bitbucket.defargfunctions;
+package com.github.sla3456.defargfunctions;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.IntStream;
 
-import static org.bitbucket.defargfunctions.FunctionRegistration.registerConsumer;
 import static org.junit.Assert.assertTrue;
-
-import org.bitbucket.defargfunctions.FunctionFactory.REQUIRED;
-import org.bitbucket.defargfunctions.ConsumerInterfaces.*;
 
 public class ConsumersTest {
 
@@ -18,16 +15,16 @@ public class ConsumersTest {
 
         ArrayList<Integer> results = new ArrayList<>();
 
-        var _consumer2DefaultParams2 = registerConsumer(
+        var _consumer2DefaultParams2 = FunctionRegistration.registerConsumer(
                 (var a, var b) -> results.add(a + b), 11, 10
         );
 
-        Consumer2DefaultParams1<Integer, Integer> _consumer2DefaultParams1 = registerConsumer(
-                (Integer a, Integer b) -> results.add(a + b), REQUIRED.NO_DEFAULT, 10
+        ConsumerInterfaces.Consumer2DefaultParams1<Integer, Integer> _consumer2DefaultParams1 = FunctionRegistration.registerConsumer(
+                (Integer a, Integer b) -> results.add(a + b), FunctionFactory.REQUIRED.NO_DEFAULT, 10
         );
 
-        Consumer2DefaultParams1<Integer, Integer> _consumer2DefaultParams0 = registerConsumer(
-                (Integer a, Integer b) -> results.add(a + b), REQUIRED.NO_DEFAULT, 2
+        ConsumerInterfaces.Consumer2DefaultParams1<Integer, Integer> _consumer2DefaultParams0 = FunctionRegistration.registerConsumer(
+                (Integer a, Integer b) -> results.add(a + b), FunctionFactory.REQUIRED.NO_DEFAULT, 2
         );
 
         _consumer2DefaultParams2.apply();
@@ -63,16 +60,16 @@ public class ConsumersTest {
 
         ArrayList<Integer> results = new ArrayList<>();
 
-        var _consumer3DefaultParams3 = registerConsumer(
+        var _consumer3DefaultParams3 = FunctionRegistration.registerConsumer(
                 (var a, var b, var c) -> results.add(a + b + c), 9, 11, 10
         );
 
-        Consumer3DefaultParams2<Integer, Integer, Integer> _consumer3DefaultParams2 = registerConsumer(
-                (Integer a, Integer b, Integer c) -> results.add(a + b + c), REQUIRED.NO_DEFAULT, 10, 20
+        ConsumerInterfaces.Consumer3DefaultParams2<Integer, Integer, Integer> _consumer3DefaultParams2 = FunctionRegistration.registerConsumer(
+                (Integer a, Integer b, Integer c) -> results.add(a + b + c), FunctionFactory.REQUIRED.NO_DEFAULT, 10, 20
         );
 
-        Consumer3DefaultParams1<Integer, Integer, Integer> _consumer3DefaultParams1 = registerConsumer(
-                (Integer a, Integer b, Integer c) -> results.add(a + b + c), REQUIRED.NO_DEFAULT, REQUIRED.NO_DEFAULT, 3
+        ConsumerInterfaces.Consumer3DefaultParams1<Integer, Integer, Integer> _consumer3DefaultParams1 = FunctionRegistration.registerConsumer(
+                (Integer a, Integer b, Integer c) -> results.add(a + b + c), FunctionFactory.REQUIRED.NO_DEFAULT, FunctionFactory.REQUIRED.NO_DEFAULT, 3
         );
 
         _consumer3DefaultParams3.apply();
@@ -104,25 +101,25 @@ public class ConsumersTest {
 
         List<Integer> results = new ArrayList<>();
 
-        var _consumer4DefaultParams4 = registerConsumer(
+        var _consumer4DefaultParams4 = FunctionRegistration.registerConsumer(
                 (var a, var b, var c, var d) -> results.add(a + b + c + d),
                 1, 2, 3, 4
         );
 
-        Consumer4DefaultParams3<Integer, Integer, Integer, Integer> _consumer4DefaultParams3 = registerConsumer(
+        ConsumerInterfaces.Consumer4DefaultParams3<Integer, Integer, Integer, Integer> _consumer4DefaultParams3 = FunctionRegistration.registerConsumer(
                 (Integer a, Integer b, Integer c, Integer d) -> results.add(a + b + c + d),
-                REQUIRED.NO_DEFAULT, 2, 3, 4
+                FunctionFactory.REQUIRED.NO_DEFAULT, 2, 3, 4
         );
 
 
-        Consumer4DefaultParams2<Integer, Integer, Integer, Integer> _consumer4DefaultParams2 = registerConsumer(
+        ConsumerInterfaces.Consumer4DefaultParams2<Integer, Integer, Integer, Integer> _consumer4DefaultParams2 = FunctionRegistration.registerConsumer(
                 (Integer a, Integer b, Integer c, Integer d) -> results.add(a + b + c + d),
-                REQUIRED.NO_DEFAULT, REQUIRED.NO_DEFAULT, 3, 4
+                FunctionFactory.REQUIRED.NO_DEFAULT, FunctionFactory.REQUIRED.NO_DEFAULT, 3, 4
         );
 
-        Consumer4DefaultParams1<Integer, Integer, Integer, Integer> _consumer4DefaultParams1 = registerConsumer(
+        ConsumerInterfaces.Consumer4DefaultParams1<Integer, Integer, Integer, Integer> _consumer4DefaultParams1 = FunctionRegistration.registerConsumer(
                 (Integer a, Integer b, Integer c, Integer d) -> results.add(a + b + c + d),
-                REQUIRED.NO_DEFAULT, REQUIRED.NO_DEFAULT, REQUIRED.NO_DEFAULT, 4
+                FunctionFactory.REQUIRED.NO_DEFAULT, FunctionFactory.REQUIRED.NO_DEFAULT, FunctionFactory.REQUIRED.NO_DEFAULT, 4
         );
 
         _consumer4DefaultParams4.apply();

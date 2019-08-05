@@ -1,5 +1,5 @@
-package org.bitbucket.defargfunctions;
-import static org.bitbucket.defargfunctions.FunctionFactory.*;
+package com.github.sla3456.defargfunctions;
+import static com.github.sla3456.defargfunctions.FunctionFactory.*;
 
 public class Main {
 

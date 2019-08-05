@@ -1,4 +1,4 @@
-package org.bitbucket.defargfunctions;
+package com.github.sla3456.defargfunctions;
 
 @SuppressWarnings({"unused", "WeakerAccess", "SameParameterValue", "JavaDoc", "Convert2Diamond"})
 public class FunctionRegistration {

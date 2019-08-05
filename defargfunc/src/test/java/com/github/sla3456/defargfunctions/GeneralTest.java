@@ -1,10 +1,10 @@
-package org.bitbucket.defargfunctions;
+package com.github.sla3456.defargfunctions;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.bitbucket.defargfunctions.FunctionRegistration.registerConsumer;
+import static com.github.sla3456.defargfunctions.FunctionRegistration.registerConsumer;
 import static org.junit.Assert.assertTrue;
 
 @SuppressWarnings({"WeakerAccess", "WeakAccess", "unused"})
