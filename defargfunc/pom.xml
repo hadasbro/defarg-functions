@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>defargfunc</groupId>
+    <name>defargfunc</name>
     <artifactId>defargfunctions</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -22,5 +23,20 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <doctitle>API for ${project.name} ${project.version}</doctitle>
+                    <windowtitle>API for ${project.name} ${project.version}</windowtitle>
+                    <testDoctitle>Test API for ${project.name} ${project.version}</testDoctitle>
+                    <testWindowtitle>Test API for ${project.name} ${project.version}</testWindowtitle>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
