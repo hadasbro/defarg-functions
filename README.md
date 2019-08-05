@@ -1,8 +1,8 @@
-**Functions and consumers with default parameters factory**
-
 ![picture](https://img.shields.io/badge/Java-11.0.1-brightgreen.svg)
 ![picture](https://img.shields.io/badge/jUnit-4.12-brightgreen)
 ![picture](https://img.shields.io/badge/license-Apache%202.0-blue)
+
+**Functions and consumers with default parameters factory**
 
 Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
