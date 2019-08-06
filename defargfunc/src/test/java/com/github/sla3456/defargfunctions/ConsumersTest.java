@@ -4,13 +4,43 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
-import com.github.sla3456.defargfunctions.ConsumerInterfaces.*;
+import com.github.sla3456.defargfunctions.Consumer.*;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static com.github.sla3456.defargfunctions.FunctionRegistration.*;
-import static com.github.sla3456.defargfunctions.FunctionFactory.REQUIRED.NO_DEFAULT;
+import static com.github.sla3456.defargfunctions.Registrator.*;
+import static com.github.sla3456.defargfunctions.Factory.REQUIRED.NO_DEFAULT;
 
 public class ConsumersTest {
 
+    /**
+     * consumerOneParamTest
+     *
+     * [1 param]
+     */
+    @Test
+    public void consumerOneParamTest() {
+
+        ArrayList<Integer> results = new ArrayList<>();
+
+        var _consumer1DefaultParams1 = registerConsumer(
+                (var a) -> results.add(a), 11
+        );
+
+        _consumer1DefaultParams1.apply();
+        assertTrue(results.contains(11));
+
+        results.clear();
+
+        _consumer1DefaultParams1.apply(22);
+        assertTrue(results.contains(22));
+    }
+
+    /**
+     * consumerTwoParamsTest
+     *
+     * [2 params]
+     */
     @Test
     public void consumerTwoParamsTest() {
 
@@ -56,6 +86,11 @@ public class ConsumersTest {
 
     }
 
+    /**
+     * consumerThreeParamsTest
+     *
+     * [3 params]
+     */
     @Test
     public void consumerThreeParamsTest() {
 
@@ -97,6 +132,11 @@ public class ConsumersTest {
 
     }
 
+    /**
+     * consumerFourParamsTest
+     *
+     * [4 params]
+     */
     @Test
     public void consumerFourParamsTest() {
 
@@ -155,4 +195,5 @@ public class ConsumersTest {
         assertTrue(IntStream.of(40, 50).allMatch(results::contains));
 
     }
+
 }

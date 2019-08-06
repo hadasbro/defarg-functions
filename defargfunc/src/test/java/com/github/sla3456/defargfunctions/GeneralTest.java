@@ -1,15 +1,15 @@
 package com.github.sla3456.defargfunctions;
 
-import com.github.sla3456.defargfunctions.ConsumerInterfaces.Consumer1DefaultParams1;
-import com.github.sla3456.defargfunctions.ConsumerInterfaces.Consumer2DefaultParams1;
-import com.github.sla3456.defargfunctions.ConsumerInterfaces.Consumer2DefaultParams2;
-import com.github.sla3456.defargfunctions.ConsumerInterfaces.Consumer4DefaultParams2;
+import com.github.sla3456.defargfunctions.Consumer.Consumer1DefaultParams1;
+import com.github.sla3456.defargfunctions.Consumer.Consumer2DefaultParams1;
+import com.github.sla3456.defargfunctions.Consumer.Consumer2DefaultParams2;
+import com.github.sla3456.defargfunctions.Consumer.Consumer4DefaultParams2;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static com.github.sla3456.defargfunctions.FunctionFactory.REQUIRED.NO_DEFAULT;
-import static com.github.sla3456.defargfunctions.FunctionRegistration.registerConsumer;
+import static com.github.sla3456.defargfunctions.Factory.REQUIRED.NO_DEFAULT;
+import static com.github.sla3456.defargfunctions.Registrator.registerConsumer;
 import static org.junit.Assert.assertTrue;
 
 @SuppressWarnings({"WeakerAccess", "WeakAccess", "unused"})

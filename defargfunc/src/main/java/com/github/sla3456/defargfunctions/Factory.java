@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 
 /**
- * FunctionFactory
+ * Factory
  *
  * use it to register consumer or function with default parameters
  *
@@ -13,16 +13,16 @@ import java.util.stream.Collectors;
 
     - register function with default params:
 
-    FunctionFactory.ConsumerDefaultParams2<Integer, Integer, String, Character> myConsumer = FunctionFactory.registerConsumer(
+    ConsumerDefaultParams2<Integer, Integer, String, Character> myConsumer = Factory.registerConsumer(
         (Integer a, Integer b, String c, Character e) -> { /CONSUMER BODY/  },
-        FunctionFactory.REQUIRED.NO_DEFAULT,
-        FunctionFactory.REQUIRED.NO_DEFAULT,
+        NO_DEFAULT,
+        NO_DEFAULT,
         "default string value",
         'x');
 
     OR [ Java >= 11 ]
 
-    FunctionFactory.ConsumerDefaultParams4<Integer, Integer, String, Character> myConsumer2=FunctionFactory.registerConsumer(
+    ConsumerDefaultParams4<Integer, Integer, String, Character> myConsumer2=Factory.registerConsumer(
      (var a,var b,var c,var e)->{ /CONSUMER BODY/  },
      1,
      2,
@@ -51,7 +51,7 @@ import java.util.stream.Collectors;
  */
 
 @SuppressWarnings({"unused", "WeakerAccess", "SameParameterValue", "JavaDoc", "Convert2Diamond"})
-final public class FunctionFactory extends FunctionRegistration implements ConsumerInterfaces, FunctionalInterfacess {
+final public class Factory extends Registrator implements Consumer, FunctionalInterfacess {
 
     /**
      * Required parameter

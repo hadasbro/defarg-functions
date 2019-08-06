@@ -1,7 +1,7 @@
 package com.github.sla3456.defargfunctions;
 
 @SuppressWarnings({"unused", "WeakAccess", "WeakerAccess"})
-public interface ConsumerInterfaces {
+public interface Consumer {
 
     /**
      * common consumer interface
@@ -19,6 +19,9 @@ public interface ConsumerInterfaces {
      * @param <W>
      */
     interface Consumer4DefaultParams4<T, S, U, W> extends Consumer4DefaultParams3<T, S, U, W> {
+        /**
+         * apply
+         */
         default void apply(){apply(null, null,null,null);}
     }
 
@@ -31,6 +34,11 @@ public interface ConsumerInterfaces {
      * @param <W>
      */
     interface Consumer4DefaultParams3<T, S, U, W> extends Consumer4DefaultParams2<T, S, U, W> {
+        /**
+         * apply
+         *
+         * @param a -
+         */
         default void apply(T a){apply(a, null,null,null);}
     }
 
@@ -43,6 +51,12 @@ public interface ConsumerInterfaces {
      * @param <W>
      */
     interface Consumer4DefaultParams2<T, S, U, W> extends Consumer4DefaultParams1<T, S, U, W> {
+        /**
+         * apply
+         *
+         * @param a -
+         * @param b -
+         */
         default void apply(T a, S b){apply(a, b, null,null);}
     }
 
@@ -55,6 +69,13 @@ public interface ConsumerInterfaces {
      * @param <W>
      */
     interface Consumer4DefaultParams1<T, S, U, W> extends Consumer4DefaultParams0<T, S, U, W> {
+        /**
+         * apply
+         *
+         * @param a -
+         * @param b -
+         * @param c -
+         */
         default void apply(T a, S b, U c){apply(a, b, c,null);}
     }
 
@@ -67,6 +88,14 @@ public interface ConsumerInterfaces {
      * @param <W>
      */
     interface Consumer4DefaultParams0<T, S, U, W> extends ConsumerDefaultParamsCommon {
+        /**
+         * apply
+         *
+         * @param a -
+         * @param b -
+         * @param c -
+         * @param d -
+         */
         void apply(T a, S b, U c, W d);
     }
 
@@ -78,6 +107,9 @@ public interface ConsumerInterfaces {
      * @param <U>
      */
     interface Consumer3DefaultParams3<T, S, U> extends Consumer3DefaultParams2<T, S, U> {
+        /**
+         * apply
+         */
         default void apply(){apply(null, null,null);}
     }
 
@@ -89,6 +121,11 @@ public interface ConsumerInterfaces {
      * @param <U>
      */
     interface Consumer3DefaultParams2<T, S, U> extends Consumer3DefaultParams1<T, S, U> {
+        /**
+         * apply
+         *
+         * @param a -
+         */
         default void apply(T a){apply(a, null, null);}
     }
 
@@ -100,6 +137,12 @@ public interface ConsumerInterfaces {
      * @param <U>
      */
     interface Consumer3DefaultParams1<T, S, U> extends Consumer3DefaultParams0<T, S, U> {
+        /**
+         * apply
+         *
+         * @param a -
+         * @param b -
+         */
         default void apply(T a, S b){apply(a, b, null);}
     }
 
@@ -111,6 +154,13 @@ public interface ConsumerInterfaces {
      * @param <U>
      */
     interface Consumer3DefaultParams0<T, S, U> extends ConsumerDefaultParamsCommon {
+        /**
+         * apply
+         *
+         * @param a -
+         * @param b -
+         * @param c -
+         */
         void apply(T a, S b, U c);
     }
 
@@ -121,6 +171,9 @@ public interface ConsumerInterfaces {
      * @param <S>
      */
     interface Consumer2DefaultParams2<T, S> extends Consumer2DefaultParams1<T, S> {
+        /**
+         * apply
+         */
         default void apply(){apply(null, null);}
     }
 
@@ -131,6 +184,11 @@ public interface ConsumerInterfaces {
      * @param <S>
      */
     interface Consumer2DefaultParams1<T, S> extends Consumer2DefaultParams0<T, S> {
+        /**
+         * apply
+         *
+         * @param a -
+         */
         default void apply(T a){apply(a, null);}
     }
 
@@ -141,6 +199,12 @@ public interface ConsumerInterfaces {
      * @param <S>
      */
     interface Consumer2DefaultParams0<T, S> extends ConsumerDefaultParamsCommon {
+        /**
+         * apply
+         *
+         * @param a -
+         * @param b -
+         */
         void apply(T a, S b);
     }
 
@@ -150,6 +214,9 @@ public interface ConsumerInterfaces {
      * @param <T>
      */
     interface Consumer1DefaultParams1<T> extends Consumer1DefaultParams0<T> {
+        /**
+         * apply
+         */
         default void apply(){apply(null);}
     }
 
@@ -159,6 +226,11 @@ public interface ConsumerInterfaces {
      * @param <T>
      */
     interface Consumer1DefaultParams0<T> extends ConsumerDefaultParamsCommon {
+        /**
+         * apply
+         *
+         * @param a -
+         */
         void apply(T a);
     }
 

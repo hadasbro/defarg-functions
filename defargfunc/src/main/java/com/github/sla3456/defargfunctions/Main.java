@@ -1,5 +1,5 @@
 package com.github.sla3456.defargfunctions;
-import static com.github.sla3456.defargfunctions.FunctionFactory.*;
+import static com.github.sla3456.defargfunctions.Factory.*;
 
 public class Main {
 
