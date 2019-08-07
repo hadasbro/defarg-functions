@@ -1,6 +1,6 @@
+![picture](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![picture](https://img.shields.io/badge/Java-11.0.1-brightgreen.svg)
 ![picture](https://img.shields.io/badge/jUnit-4.12-brightgreen)
-![picture](https://img.shields.io/badge/license-Apache%202.0-blue)
 
 **Functions and consumers with default parameters factory**
 
@@ -98,7 +98,7 @@ Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
     },
 
     // mark param 1 as mandatory
-    REQUIRED.NO_DEFAULT,
+    NO_DEFAULT,
 
     //default value for param 2
     "default string"
@@ -120,10 +120,10 @@ Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = regist
     ),
 
     // param 1 marked as mandatory
-    REQUIRED.NO_DEFAULT,
+    NO_DEFAULT,
 
     // param 2 marked as mandatory
-    REQUIRED.NO_DEFAULT,
+    NO_DEFAULT,
 
     // default value for param 3
     "default string",
@@ -208,7 +208,59 @@ class Test{
 
 
 
+7. Simple function (Java 11 style)
+```java
+/*
+    function with 2 optional params
+ */
+var multiply = registerFunction(
+        (var a, var b) -> a * b,2, 3
+);
 
+Integer result1 = multiply.apply(); // 6
+Integer result2 = multiply.apply(7); // 21
+Integer result3 = multiply.apply(7, 4); // 28
+```
+
+8. Other function examples
+
+Function with 2 optional params.
+
+```java
+Function2DefaultParams2<String, Integer, Integer> func = registerFunction(
+    (Integer a, Integer b) -> a + "," + b, 1, 2
+);
+
+String result1 = func.apply(); // 1,2
+String result2 = func.apply(22); // 22,2
+String result3 = func.apply(22, 33); // 22,33
+```
+
+Function with 2 params but only 1 is optional
+
+```java
+Function2DefaultParams1<String, Integer, Integer> func2 = registerFunction(
+    (Integer a, Integer b) -> a + "," + b, NO_DEFAULT, 2
+);
+
+String result5 = func2.apply(1); //1,2
+String result6 = func2.apply(11, 22); // 11,22
+```
+
+9. Function registered in class (Java 11 style)
+```java
+class Test{
+
+    Function2DefaultParams2<Integer, Integer, Integer> sum = registerFunction(
+            (var a, var b) -> a + b, 1, 2
+    );
+
+    public Test(){
+        int mySum = sum.apply(100,200); // 300
+    }
+
+}
+```
 ---
 
 

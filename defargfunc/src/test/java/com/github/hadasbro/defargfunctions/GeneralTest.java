@@ -1,15 +1,14 @@
-package com.github.sla3456.defargfunctions;
+package com.github.hadasbro.defargfunctions;
 
-import com.github.sla3456.defargfunctions.Consumer.Consumer1DefaultParams1;
-import com.github.sla3456.defargfunctions.Consumer.Consumer2DefaultParams1;
-import com.github.sla3456.defargfunctions.Consumer.Consumer2DefaultParams2;
-import com.github.sla3456.defargfunctions.Consumer.Consumer4DefaultParams2;
+import com.github.hadasbro.defargfunctions.Consumer.Consumer1DefaultParams1;
+import com.github.hadasbro.defargfunctions.Consumer.Consumer2DefaultParams1;
+import com.github.hadasbro.defargfunctions.Consumer.Consumer2DefaultParams2;
+import com.github.hadasbro.defargfunctions.Consumer.Consumer4DefaultParams2;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static com.github.sla3456.defargfunctions.Factory.REQUIRED.NO_DEFAULT;
-import static com.github.sla3456.defargfunctions.Registrator.registerConsumer;
+import static com.github.hadasbro.defargfunctions.Registrator.registerConsumer;
 import static org.junit.Assert.assertTrue;
 
 @SuppressWarnings({"WeakerAccess", "WeakAccess", "unused"})
@@ -83,7 +82,7 @@ public class GeneralTest {
                 (Integer a, String str) -> results.add((a + " - " + str)),
 
                 // mark param 1 as mandatory
-                NO_DEFAULT,
+                Factory.REQUIRED.NO_DEFAULT,
 
                 //default value for param 2
                 "default string"
@@ -108,10 +107,10 @@ public class GeneralTest {
                 },
 
                 // param 1 marked as mandatory
-                NO_DEFAULT,
+                Factory.REQUIRED.NO_DEFAULT,
 
                 // param 2 marked as mandatory
-                NO_DEFAULT,
+                Factory.REQUIRED.NO_DEFAULT,
 
                 // default value for param 3
                 "default string",

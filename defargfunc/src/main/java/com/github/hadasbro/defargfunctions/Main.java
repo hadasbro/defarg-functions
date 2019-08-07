@@ -1,6 +1,7 @@
-package com.github.sla3456.defargfunctions;
-import static com.github.sla3456.defargfunctions.Factory.*;
+package com.github.hadasbro.defargfunctions;
+import static com.github.hadasbro.defargfunctions.Factory.*;
 
+@SuppressWarnings("unused")
 public class Main {
 
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class Main {
         /*
             consumer with 2 parameters and 1 default value
          */
-        Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
+        Consumer2DefaultParams1<Integer, String> doSomethingElse;
+        doSomethingElse = registerConsumer(
 
                 // consumer
                 (Integer a, String str) -> {
@@ -40,10 +42,10 @@ public class Main {
             ),
 
             // param 1 marked as mandatory
-            REQUIRED.NO_DEFAULT,
+            Factory.REQUIRED.NO_DEFAULT,
 
             // param 2 marked as mandatory
-            REQUIRED.NO_DEFAULT,
+            Factory.REQUIRED.NO_DEFAULT,
 
             // default value for param 3
             "default string",

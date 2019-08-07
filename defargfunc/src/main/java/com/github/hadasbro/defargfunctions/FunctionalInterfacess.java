@@ -1,4 +1,4 @@
-package com.github.sla3456.defargfunctions;
+package com.github.hadasbro.defargfunctions;
 
 @SuppressWarnings({"WeakAccess", "WeakerAccess","unused","UnusedReturnValue"})
 public interface FunctionalInterfacess {

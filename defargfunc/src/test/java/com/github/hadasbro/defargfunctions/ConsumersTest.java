@@ -1,15 +1,14 @@
-package com.github.sla3456.defargfunctions;
+package com.github.hadasbro.defargfunctions;
 
+import com.github.hadasbro.defargfunctions.Consumer.*;
 import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
-import com.github.sla3456.defargfunctions.Consumer.*;
 
-import static org.junit.Assert.assertEquals;
+import static com.github.hadasbro.defargfunctions.Registrator.registerConsumer;
 import static org.junit.Assert.assertTrue;
-import static com.github.sla3456.defargfunctions.Registrator.*;
-import static com.github.sla3456.defargfunctions.Factory.REQUIRED.NO_DEFAULT;
 
 public class ConsumersTest {
 
@@ -24,7 +23,7 @@ public class ConsumersTest {
         ArrayList<Integer> results = new ArrayList<>();
 
         var _consumer1DefaultParams1 = registerConsumer(
-                (var a) -> results.add(a), 11
+                results::add, 11
         );
 
         _consumer1DefaultParams1.apply();
@@ -51,11 +50,11 @@ public class ConsumersTest {
         );
 
         Consumer2DefaultParams1<Integer, Integer> _consumer2DefaultParams1 = registerConsumer(
-                (Integer a, Integer b) -> results.add(a + b), NO_DEFAULT, 10
+                (Integer a, Integer b) -> results.add(a + b), Factory.REQUIRED.NO_DEFAULT, 10
         );
 
         Consumer2DefaultParams1<Integer, Integer> _consumer2DefaultParams0 = registerConsumer(
-                (Integer a, Integer b) -> results.add(a + b), NO_DEFAULT, 2
+                (Integer a, Integer b) -> results.add(a + b), Factory.REQUIRED.NO_DEFAULT, 2
         );
 
         _consumer2DefaultParams2.apply();
@@ -101,11 +100,11 @@ public class ConsumersTest {
         );
 
         Consumer3DefaultParams2<Integer, Integer, Integer> _consumer3DefaultParams2 = registerConsumer(
-                (Integer a, Integer b, Integer c) -> results.add(a + b + c), NO_DEFAULT, 10, 20
+                (Integer a, Integer b, Integer c) -> results.add(a + b + c), Factory.REQUIRED.NO_DEFAULT, 10, 20
         );
 
         Consumer3DefaultParams1<Integer, Integer, Integer> _consumer3DefaultParams1 = registerConsumer(
-                (Integer a, Integer b, Integer c) -> results.add(a + b + c), NO_DEFAULT, NO_DEFAULT, 3
+                (Integer a, Integer b, Integer c) -> results.add(a + b + c), Factory.REQUIRED.NO_DEFAULT, Factory.REQUIRED.NO_DEFAULT, 3
         );
 
         _consumer3DefaultParams3.apply();
@@ -149,18 +148,18 @@ public class ConsumersTest {
 
         Consumer4DefaultParams3<Integer, Integer, Integer, Integer> _consumer4DefaultParams3 = registerConsumer(
                 (Integer a, Integer b, Integer c, Integer d) -> results.add(a + b + c + d),
-                NO_DEFAULT, 2, 3, 4
+                Factory.REQUIRED.NO_DEFAULT, 2, 3, 4
         );
 
 
         Consumer4DefaultParams2<Integer, Integer, Integer, Integer> _consumer4DefaultParams2 = registerConsumer(
                 (Integer a, Integer b, Integer c, Integer d) -> results.add(a + b + c + d),
-                NO_DEFAULT, NO_DEFAULT, 3, 4
+                Factory.REQUIRED.NO_DEFAULT, Factory.REQUIRED.NO_DEFAULT, 3, 4
         );
 
         Consumer4DefaultParams1<Integer, Integer, Integer, Integer> _consumer4DefaultParams1 = registerConsumer(
                 (Integer a, Integer b, Integer c, Integer d) -> results.add(a + b + c + d),
-                NO_DEFAULT, NO_DEFAULT, NO_DEFAULT, 4
+                Factory.REQUIRED.NO_DEFAULT, Factory.REQUIRED.NO_DEFAULT, Factory.REQUIRED.NO_DEFAULT, 4
         );
 
         _consumer4DefaultParams4.apply();

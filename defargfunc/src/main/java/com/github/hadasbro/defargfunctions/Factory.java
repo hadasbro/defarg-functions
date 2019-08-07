@@ -1,4 +1,4 @@
-package com.github.sla3456.defargfunctions;
+package com.github.hadasbro.defargfunctions;
 import net.jodah.typetools.TypeResolver;
 import java.util.*;
 import java.util.stream.Collectors;
