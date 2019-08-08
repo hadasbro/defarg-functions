@@ -1,5 +1,5 @@
-![picture](https://img.shields.io/badge/license-Apache%202.0-blue)
 ![picture](https://img.shields.io/badge/Java-11.0.1-green)
+![picture](https://img.shields.io/badge/license-Apache%202.0-blue)
 
 **Functions and consumers with default parameters factory**
 
