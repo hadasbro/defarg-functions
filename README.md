@@ -58,153 +58,153 @@ a.apply(1, 2);
 You can use FuntionFactory to register function or consumer as below.
 
 1. Simple example (Java 11)
-```java
-var showSum = registerConsumer((var a, var b) ->  {System.out.println(a + b);}, 1, 2);
-
-showSum.apply(); // 3
-showSum.apply(11); // 13
-showSum.apply(11,12); // 23
-```
+    ```java
+    var showSum = registerConsumer((var a, var b) ->  {System.out.println(a + b);}, 1, 2);
+    
+    showSum.apply(); // 3
+    showSum.apply(11); // 13
+    showSum.apply(11,12); // 23
+    ```
 2. Consumer with *1 parameter and 1 default* value
 
 ```java
-Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
-
-        // consumer
-        System.out::println,
-
-        //default param 1
-        150
-);
-
-doSomething.apply(); // 150
-doSomething.apply(250); // 250
-```
-		
+    Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
+    
+            // consumer
+            System.out::println,
+    
+            //default param 1
+            150
+    );
+    
+    doSomething.apply(); // 150
+    doSomething.apply(250); // 250
+    ```
+            
 
 
 
 
 3. Consumer with *2 parameters and 1 default* value
-```java
-Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
-
-    // consumer
-    (Integer a, String str) -> {
-
-        // consumer body
-        System.out.println(a + " - " + str);
-
-    },
-
-    // mark param 1 as mandatory
-    NO_DEFAULT,
-
-    //default value for param 2
-    "default string"
-);
-
-doSomethingElse.apply(1); // 1 - default string
-doSomethingElse.apply(250, "something"); // 250 - something
-```
-
+    ```java
+    Consumer2DefaultParams1<Integer, String> doSomethingElse = registerConsumer(
+    
+        // consumer
+        (Integer a, String str) -> {
+    
+            // consumer body
+            System.out.println(a + " - " + str);
+    
+        },
+    
+        // mark param 1 as mandatory
+        NO_DEFAULT,
+    
+        //default value for param 2
+        "default string"
+    );
+    
+    doSomethingElse.apply(1); // 1 - default string
+    doSomethingElse.apply(250, "something"); // 250 - something
+    ```
+    
 
 
 4. Consumer with *4 parameter and 2 default* values
-```java
-Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
-
-    // consumer
-    (Integer a, Integer b, String c, Character e) -> System.out.println(
-            a + " -> " + b + "  ->  " + c + "  -> " + e
-    ),
-
-    // param 1 marked as mandatory
-    NO_DEFAULT,
-
-    // param 2 marked as mandatory
-    NO_DEFAULT,
-
-    // default value for param 3
-    "default string",
-
-    // default value for param 4
-    'x'
-
-);
-
-// consumer call results:
-
-myConsumer.apply(2, 3, "test", 'a');
-// result: 2 -> 3  ->  test  -> a
-
-myConsumer.apply(2, 3, "test2");
-// result: 2 -> 3  ->  test  -> a
-
-myConsumer.apply(2, 3);
-// result: 2 -> 3  ->  default string  -> x
-```
-
+    ```java
+    Consumer4DefaultParams2<Integer, Integer, String, Character> myConsumer = registerConsumer(
+    
+        // consumer
+        (Integer a, Integer b, String c, Character e) -> System.out.println(
+                a + " -> " + b + "  ->  " + c + "  -> " + e
+        ),
+    
+        // param 1 marked as mandatory
+        NO_DEFAULT,
+    
+        // param 2 marked as mandatory
+        NO_DEFAULT,
+    
+        // default value for param 3
+        "default string",
+    
+        // default value for param 4
+        'x'
+    
+    );
+    
+    // consumer call results:
+    
+    myConsumer.apply(2, 3, "test", 'a');
+    // result: 2 -> 3  ->  test  -> a
+    
+    myConsumer.apply(2, 3, "test2");
+    // result: 2 -> 3  ->  test  -> a
+    
+    myConsumer.apply(2, 3);
+    // result: 2 -> 3  ->  default string  -> x
+    ```
+    
 
 
 
 5. *JAVA 11* consumer example
-```java
-Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
-
-        // consumer
-        (var a, var str) -> {
-
-            // consumer body
-            System.out.println(a + " - " + str);
-
-        },
-
-        // default value param 1
-        150,
-
-        // default value param 2
-        "default string b"
-);
-
-doSomethingNew.apply(); // 150 - default string b
-doSomethingNew.apply(12); // 12 - default string b
-doSomethingNew.apply(13, "test string"); // 13 - test string
-```
-		
-		
+    ```java
+    Consumer2DefaultParams2<Integer, String> doSomethingNew = registerConsumer(
+    
+            // consumer
+            (var a, var str) -> {
+    
+                // consumer body
+                System.out.println(a + " - " + str);
+    
+            },
+    
+            // default value param 1
+            150,
+    
+            // default value param 2
+            "default string b"
+    );
+    
+    doSomethingNew.apply(); // 150 - default string b
+    doSomethingNew.apply(12); // 12 - default string b
+    doSomethingNew.apply(13, "test string"); // 13 - test string
+    ```
+            
+            
 		
 
 		
 6. Consumer as lambda function in class
-```java
-class Test{
-
-    Consumer2DefaultParams2<Integer, String> consumer = registerConsumer(
-
-            // consumer
-            (var a, var str) -> {
-
-                // consumer body
-                System.out.println(a + " - " + str);
-
-            },
-
-            // default value for param 2
-            14,
-
-            // default value for param 2
-            "default string b"
-    );
-
-    public Test(){
-        consumer.apply(); // 14 - default string b
-        consumer.apply(12); // 12 - default string b
-        consumer.apply(15, "abc"); // 15 - abc
+    ```java
+    class Test{
+    
+        Consumer2DefaultParams2<Integer, String> consumer = registerConsumer(
+    
+                // consumer
+                (var a, var str) -> {
+    
+                    // consumer body
+                    System.out.println(a + " - " + str);
+    
+                },
+    
+                // default value for param 2
+                14,
+    
+                // default value for param 2
+                "default string b"
+        );
+    
+        public Test(){
+            consumer.apply(); // 14 - default string b
+            consumer.apply(12); // 12 - default string b
+            consumer.apply(15, "abc"); // 15 - abc
+        }
+    
     }
-
-}
-```
+    ```
 
 
 
@@ -224,43 +224,43 @@ Integer result3 = multiply.apply(7, 4); // 28
 
 8. Other function examples
 
-Function with 2 optional params.
-
-```java
-Function2DefaultParams2<String, Integer, Integer> func = registerFunction(
-    (Integer a, Integer b) -> a + "," + b, 1, 2
-);
-
-String result1 = func.apply(); // 1,2
-String result2 = func.apply(22); // 22,2
-String result3 = func.apply(22, 33); // 22,33
-```
-
-Function with 2 params but only 1 is optional
-
-```java
-Function2DefaultParams1<String, Integer, Integer> func2 = registerFunction(
-    (Integer a, Integer b) -> a + "," + b, NO_DEFAULT, 2
-);
-
-String result5 = func2.apply(1); //1,2
-String result6 = func2.apply(11, 22); // 11,22
-```
+    Function with 2 optional params.
+    
+    ```java
+    Function2DefaultParams2<String, Integer, Integer> func = registerFunction(
+        (Integer a, Integer b) -> a + "," + b, 1, 2
+    );
+    
+    String result1 = func.apply(); // 1,2
+    String result2 = func.apply(22); // 22,2
+    String result3 = func.apply(22, 33); // 22,33
+    ```
+    
+    Function with 2 params but only 1 is optional
+    
+    ```java
+    Function2DefaultParams1<String, Integer, Integer> func2 = registerFunction(
+        (Integer a, Integer b) -> a + "," + b, NO_DEFAULT, 2
+    );
+    
+    String result5 = func2.apply(1); //1,2
+    String result6 = func2.apply(11, 22); // 11,22
+    ```
 
 9. Function registered in class (Java 11 style)
-```java
-class Test{
-
-    Function2DefaultParams2<Integer, Integer, Integer> sum = registerFunction(
-            (var a, var b) -> a + b, 1, 2
-    );
-
-    public Test(){
-        int mySum = sum.apply(100,200); // 300
+    ```java
+    class Test{
+    
+        Function2DefaultParams2<Integer, Integer, Integer> sum = registerFunction(
+                (var a, var b) -> a + b, 1, 2
+        );
+    
+        public Test(){
+            int mySum = sum.apply(100,200); // 300
+        }
+    
     }
-
-}
-```
+    ```
 ---
 
 
