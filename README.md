@@ -209,18 +209,18 @@ You can use FuntionFactory to register function or consumer as below.
 
 
 7. Simple function (Java 11 style)
-```java
-/*
-    function with 2 optional params
- */
-var multiply = registerFunction(
-        (var a, var b) -> a * b,2, 3
-);
-
-Integer result1 = multiply.apply(); // 6
-Integer result2 = multiply.apply(7); // 21
-Integer result3 = multiply.apply(7, 4); // 28
-```
+    ```java
+    /*
+        function with 2 optional params
+     */
+    var multiply = registerFunction(
+            (var a, var b) -> a * b,2, 3
+    );
+    
+    Integer result1 = multiply.apply(); // 6
+    Integer result2 = multiply.apply(7); // 21
+    Integer result3 = multiply.apply(7, 4); // 28
+    ```
 
 8. Other function examples
 
