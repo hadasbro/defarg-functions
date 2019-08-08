@@ -67,7 +67,7 @@ You can use FuntionFactory to register function or consumer as below.
     ```
 2. Consumer with *1 parameter and 1 default* value
 
-```java
+    ```java
     Consumer1DefaultParams1<Integer> doSomething = registerConsumer(
     
             // consumer
