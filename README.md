@@ -1,14 +1,14 @@
 ![picture](https://img.shields.io/badge/Java-11.0.1-green)
 ![picture](https://img.shields.io/badge/jUnit-4.12-green)
-![picture](https://img.shields.io/badge/license-Apache%202.0-blue)
+![picture](https://img.shields.io/badge/License-Apache--2.0-%23008EFF)
 
 **Functions and consumers with default parameters factory**
 
 Use this module if you need function or consumer with default parameter such as it's possible in some other programming languages.
 
-Uses *[Type Tools](https://github.com/jhalterman/typetools)* to resolve variadic params
+Uses [Type Tools](https://github.com/jhalterman/typetools) to resolve variadic params
 
-Uses *jUnit* for autotests
+Uses jUnit(https://github.com/junit-team) for autotests
 
 ---
 
