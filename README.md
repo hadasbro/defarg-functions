@@ -51,7 +51,20 @@ a.apply(1);
 a.apply(1, 2);
 ```
 
+    
 ---
+
+## Installation
+
+Install from Maven Repository
+
+    <dependency>
+      <groupId>com.github.hadasbro</groupId>
+      <artifactId>defargfunctions</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+    
+
 
 ## Usage
 
