@@ -8,7 +8,7 @@ Use this module if you need function or consumer with default parameter such as 
 
 Uses [Type Tools](https://github.com/jhalterman/typetools) to resolve variadic params
 
-Uses jUnit(https://github.com/junit-team) for autotests
+Uses [jUnit](https://github.com/junit-team) for autotests
 
 ---
 
