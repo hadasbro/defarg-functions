@@ -21,7 +21,7 @@ public class Registrator {
      * @param <W> - type
      * @return Consumer4DefaultParams4
      */
-    static <T, S, U, W> Consumer4DefaultParams4<T, S, U, W> registerConsumer(ConsumerParams4Default4<T, S, U, W> fun, T def1, S def2, U def3, W def4) {
+    public static <T, S, U, W> Consumer4DefaultParams4<T, S, U, W> registerConsumer(ConsumerParams4Default4<T, S, U, W> fun, T def1, S def2, U def3, W def4) {
 
         checkIllegalArguments(ConsumerParams4Default4.class, fun.getClass());
 
@@ -49,7 +49,7 @@ public class Registrator {
      * @param <W> - type
      * @return Consumer4DefaultParams3
      */
-    static <T, S, U, W> Consumer4DefaultParams3<T, S, U, W> registerConsumer(ConsumerParams4Default3<T, S, U, W> fun, Factory.REQUIRED def1, S def2, U def3, W def4) {
+    public static <T, S, U, W> Consumer4DefaultParams3<T, S, U, W> registerConsumer(ConsumerParams4Default3<T, S, U, W> fun, Factory.REQUIRED def1, S def2, U def3, W def4) {
 
         checkIllegalArguments(ConsumerParams4Default3.class, fun.getClass());
 
@@ -76,7 +76,7 @@ public class Registrator {
      * @param <W> - type
      * @return Consumer4DefaultParams2
      */
-    static <T, S, U, W> Consumer4DefaultParams2<T, S, U, W> registerConsumer(ConsumerParams4Default2<T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3, W def4) {
+    public static <T, S, U, W> Consumer4DefaultParams2<T, S, U, W> registerConsumer(ConsumerParams4Default2<T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3, W def4) {
 
         checkIllegalArguments(ConsumerParams4Default2.class, fun.getClass());
 
@@ -102,7 +102,7 @@ public class Registrator {
      * @param <W> - type
      * @return Consumer4DefaultParams1
      */
-    static <T, S, U, W> Consumer4DefaultParams1<T, S, U, W> registerConsumer(ConsumerParams4Default1<T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, Factory.REQUIRED def3, W def4) {
+    public static <T, S, U, W> Consumer4DefaultParams1<T, S, U, W> registerConsumer(ConsumerParams4Default1<T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, Factory.REQUIRED def3, W def4) {
 
         checkIllegalArguments(ConsumerParams4Default1.class, fun.getClass());
 
@@ -124,7 +124,7 @@ public class Registrator {
      * @param <U>
      * @return
      */
-    static <T, S, U> Consumer3DefaultParams3<T, S, U> registerConsumer(ConsumerParams3Default3<T, S, U> fun, T def1, S def2, U def3) {
+    public static <T, S, U> Consumer3DefaultParams3<T, S, U> registerConsumer(ConsumerParams3Default3<T, S, U> fun, T def1, S def2, U def3) {
 
         checkIllegalArguments(ConsumerParams3Default3.class, fun.getClass());
 
@@ -149,7 +149,7 @@ public class Registrator {
      * @param <U>
      * @return
      */
-    static <T, S, U> Consumer3DefaultParams2<T, S, U> registerConsumer(ConsumerParams3Default2<T, S, U> fun, Factory.REQUIRED def1, S def2, U def3) {
+    public static <T, S, U> Consumer3DefaultParams2<T, S, U> registerConsumer(ConsumerParams3Default2<T, S, U> fun, Factory.REQUIRED def1, S def2, U def3) {
 
         checkIllegalArguments(ConsumerParams3Default2.class, fun.getClass());
 
@@ -173,7 +173,7 @@ public class Registrator {
      * @param <U>
      * @return
      */
-    static <T, S, U> Consumer3DefaultParams1<T, S, U> registerConsumer(ConsumerParams3Default1<T, S, U> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3) {
+    public static <T, S, U> Consumer3DefaultParams1<T, S, U> registerConsumer(ConsumerParams3Default1<T, S, U> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3) {
 
         checkIllegalArguments(ConsumerParams3Default1.class, fun.getClass());
 
@@ -194,7 +194,7 @@ public class Registrator {
      * @param <S>
      * @return
      */
-    static <T, S> Consumer2DefaultParams2<T, S> registerConsumer(ConsumerParams2Default2<T, S> fun, T def1, S def2) {
+    public static <T, S> Consumer2DefaultParams2<T, S> registerConsumer(ConsumerParams2Default2<T, S> fun, T def1, S def2) {
 
         checkIllegalArguments(ConsumerParams2Default2.class, fun.getClass());
 
@@ -216,7 +216,7 @@ public class Registrator {
      * @param <S>
      * @return
      */
-    static <T, S> Consumer2DefaultParams1<T, S> registerConsumer(ConsumerParams2Default1<T, S> fun, Factory.REQUIRED def1, S def2) {
+    public static <T, S> Consumer2DefaultParams1<T, S> registerConsumer(ConsumerParams2Default1<T, S> fun, Factory.REQUIRED def1, S def2) {
 
         checkIllegalArguments(ConsumerParams2Default1.class, fun.getClass());
 
@@ -235,7 +235,7 @@ public class Registrator {
      * @param <T>
      * @return
      */
-    static <T> Consumer1DefaultParams1<T> registerConsumer(ConsumerParams1Default1<T> fun, T def1) {
+    public static <T> Consumer1DefaultParams1<T> registerConsumer(ConsumerParams1Default1<T> fun, T def1) {
 
         checkIllegalArguments(ConsumerParams1Default1.class, fun.getClass());
 
@@ -265,7 +265,7 @@ public class Registrator {
      * @param <W>
      * @return
      */
-    static <RT, T, S, U, W> Function.Function4DefaultParams4<RT, T, S, U, W> registerFunction(FunctionParams4Default4<RT, T, S, U, W> fun, T def1, S def2, U def3, W def4) {
+    public static <RT, T, S, U, W> Function.Function4DefaultParams4<RT, T, S, U, W> registerFunction(FunctionParams4Default4<RT, T, S, U, W> fun, T def1, S def2, U def3, W def4) {
 
         checkIllegalArguments(FunctionParams4Default4.class, fun.getClass());
 
@@ -294,7 +294,7 @@ public class Registrator {
      * @param <W>
      * @return
      */
-    static <RT, T, S, U, W> Function.Function4DefaultParams3<RT, T, S, U, W> registerFunction(FunctionParams4Default3<RT, T, S, U, W> fun, Factory.REQUIRED def1, S def2, U def3, W def4) {
+    public static <RT, T, S, U, W> Function.Function4DefaultParams3<RT, T, S, U, W> registerFunction(FunctionParams4Default3<RT, T, S, U, W> fun, Factory.REQUIRED def1, S def2, U def3, W def4) {
 
         checkIllegalArguments(FunctionParams4Default3.class, fun.getClass());
 
@@ -322,7 +322,7 @@ public class Registrator {
      * @param <W>
      * @return
      */
-    static <RT, T, S, U, W> Function.Function4DefaultParams2<RT, T, S, U, W> registerFunction(FunctionParams4Default2<RT, T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3, W def4) {
+    public static <RT, T, S, U, W> Function.Function4DefaultParams2<RT, T, S, U, W> registerFunction(FunctionParams4Default2<RT, T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3, W def4) {
 
         checkIllegalArguments(FunctionParams4Default2.class, fun.getClass());
 
@@ -349,7 +349,7 @@ public class Registrator {
      * @param <W>
      * @return
      */
-    static <RT, T, S, U, W> Function.Function4DefaultParams1<RT, T, S, U, W> registerFunction(FunctionParams4Default1<RT, T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, Factory.REQUIRED def3, W def4) {
+    public static <RT, T, S, U, W> Function.Function4DefaultParams1<RT, T, S, U, W> registerFunction(FunctionParams4Default1<RT, T, S, U, W> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, Factory.REQUIRED def3, W def4) {
 
         checkIllegalArguments(FunctionParams4Default1.class, fun.getClass());
 
@@ -372,7 +372,7 @@ public class Registrator {
      * @param <U>
      * @return
      */
-    static <RT, T, S, U> Function.Function3DefaultParams3<RT, T, S, U> registerFunction(FunctionParams3Default3<RT, T, S, U> fun, T def1, S def2, U def3) {
+    public static <RT, T, S, U> Function.Function3DefaultParams3<RT, T, S, U> registerFunction(FunctionParams3Default3<RT, T, S, U> fun, T def1, S def2, U def3) {
 
         checkIllegalArguments(FunctionParams3Default3.class, fun.getClass());
 
@@ -398,7 +398,7 @@ public class Registrator {
      * @param <U>
      * @return
      */
-    static <RT, T, S, U> Function.Function3DefaultParams2<RT, T, S, U> registerFunction(FunctionParams3Default2<RT, T, S, U> fun, Factory.REQUIRED def1, S def2, U def3) {
+    public static <RT, T, S, U> Function.Function3DefaultParams2<RT, T, S, U> registerFunction(FunctionParams3Default2<RT, T, S, U> fun, Factory.REQUIRED def1, S def2, U def3) {
 
         checkIllegalArguments(FunctionParams3Default2.class, fun.getClass());
 
@@ -423,7 +423,7 @@ public class Registrator {
      * @param <U>
      * @return
      */
-    static <RT, T, S, U> Function.Function3DefaultParams1<RT, T, S, U> registerFunction(FunctionParams3Default1<RT, T, S, U> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3) {
+    public static <RT, T, S, U> Function.Function3DefaultParams1<RT, T, S, U> registerFunction(FunctionParams3Default1<RT, T, S, U> fun, Factory.REQUIRED def1, Factory.REQUIRED def2, U def3) {
 
         checkIllegalArguments(FunctionParams3Default1.class, fun.getClass());
 
@@ -445,7 +445,7 @@ public class Registrator {
      * @param <S>
      * @return
      */
-    static <RT, T, S> Function.Function2DefaultParams2<RT, T, S> registerFunction(FunctionParams2Default2<RT, T, S> fun, T def1, S def2) {
+    public static <RT, T, S> Function.Function2DefaultParams2<RT, T, S> registerFunction(FunctionParams2Default2<RT, T, S> fun, T def1, S def2) {
 
         checkIllegalArguments(FunctionParams2Default2.class, fun.getClass());
 
@@ -468,7 +468,7 @@ public class Registrator {
      * @param <S>
      * @return
      */
-    static <RT, T, S> Function.Function2DefaultParams1<RT, T, S> registerFunction(FunctionParams2Default1<RT, T, S> fun, Factory.REQUIRED def1, S def2) {
+    public static <RT, T, S> Function.Function2DefaultParams1<RT, T, S> registerFunction(FunctionParams2Default1<RT, T, S> fun, Factory.REQUIRED def1, S def2) {
 
         checkIllegalArguments(FunctionParams2Default1.class, fun.getClass());
 
@@ -488,7 +488,7 @@ public class Registrator {
      * @param <T>
      * @return
      */
-    static <RT, T> Function.Function1DefaultParams1<RT, T> registerFunction(FunctionParams1Default1<RT, T> fun, T def1) {
+    public static <RT, T> Function.Function1DefaultParams1<RT, T> registerFunction(FunctionParams1Default1<RT, T> fun, T def1) {
 
         checkIllegalArguments(FunctionParams1Default1.class, fun.getClass());
 
