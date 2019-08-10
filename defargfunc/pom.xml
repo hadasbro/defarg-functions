@@ -11,9 +11,9 @@
     <version>1.0.1-SNAPSHOT</version>
     <url>https://github.com/hadasbro/defarg-functions</url>
     <properties>
-        <jdk.version>1.11</jdk.version>
-        <maven.compiler.target>1.11</maven.compiler.target>
-        <maven.compiler.source>1.11</maven.compiler.source>
+        <jdk.version>11</jdk.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
     </properties>
 
 
