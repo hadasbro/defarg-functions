@@ -295,7 +295,6 @@ After bugfix in JDK [ JDK-8027181 ], default parameters will be provided via ann
 
 	(var a, @def(object) var bee, @def("def string") var ster, @def(123) var number) -> { /* body */ }
 
----
 
 ## Authors
 
